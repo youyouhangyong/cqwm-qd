@@ -40,8 +40,13 @@ export default {
       this.name = 'yyhy'
     },
     handleSend() {
-      axios.post('/api/user').then(res => {
-        console.log(res)
+      axios.post('http://localhost:8080/api/user/login', {
+        name: 'zc',
+        password: 123345
+      }).then(res => {
+        console.log(res.data)
+      }).catch(err => {
+        console.log(err)
       })
     }
   }
