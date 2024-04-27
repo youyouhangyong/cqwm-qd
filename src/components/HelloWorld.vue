@@ -18,10 +18,11 @@
     <div>
       <input type="button" value="保存" @click="handleSave">
     </div>
+    <input type= "button" value="发送请求" @click="handleSend">
   </div>
 </template>
-
 <script>
+import axios from 'axios';
 export default {
   name: 'HelloWorld',
   props: {
@@ -36,10 +37,17 @@ export default {
   },
   methods: {
     handleSave() {
-      alert(this.name + "保存成功")
+      this.name = 'yyhy'
+    },
+    handleSend() {
+      axios.post('/api/user').then(res => {
+        console.log(res)
+      })
     }
   }
 }
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
