@@ -4,7 +4,13 @@ module.exports = defineConfig({
   devServer:{
     port: 7070,
     proxy:{
-      
+      'api':{
+        target:'http://localhost:8080',
+        pathRewrite:{
+          '^/api':''
+      }
+
     }
   }
+}
 })
